@@ -1,3 +1,6 @@
+import { IStat } from "./stat.model";
+
+
 export interface IPokemon{
 	id: number;
 	name: string;
