@@ -1,0 +1,72 @@
+// Sprite principal
+ion-content > ion-img:first-of-type {
+  width: 70%;
+  max-width: 280px;
+  margin: 56px auto 24px;
+  padding: 24px;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 90, 44, 0.18),
+    transparent 70%
+  );
+  border-radius: 50%;
+}
+
+// Etiquetas de las filas (Tipo, Peso, Principales...)
+ion-card ion-text {
+  color: var(--app-muted);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+// Valores a la derecha (habilidades)
+ion-col.ion-text-end ion-text {
+  color: var(--app-text);
+  font-size: 1rem;
+  text-transform: capitalize;
+  letter-spacing: 0;
+  font-weight: 500;
+}
+
+// Barras de estadísticas
+ion-progress-bar {
+  height: 8px;
+  border-radius: 999px;
+  --background: rgba(255, 255, 255, 0.08);
+}
+
+// Nombre y número de cada estadística (3ra tarjeta)
+ion-card:nth-of-type(3) {
+  ion-row {
+    align-items: center;
+    padding: 4px 0;
+  }
+
+  ion-col:nth-child(2) ion-text {
+    color: var(--app-text);
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0;
+  }
+
+  // Un color por estadística, en el orden de tu arreglo pokemonStats
+  ion-row:nth-child(1) ion-progress-bar {
+    --progress-background: #4ade80;
+  }
+  ion-row:nth-child(2) ion-progress-bar {
+    --progress-background: #fb923c;
+  }
+  ion-row:nth-child(3) ion-progress-bar {
+    --progress-background: #7dd3fc;
+  }
+  ion-row:nth-child(4) ion-progress-bar {
+    --progress-background: #a855f7;
+  }
+  ion-row:nth-child(5) ion-progress-bar {
+    --progress-background: #0ea5e9;
+  }
+  ion-row:nth-child(6) ion-progress-bar {
+    --progress-background: #ff5a2c;
+  }
+}
