@@ -1,0 +1,35 @@
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    @for (pokemon of pokemons(); track pokemon.id) {
+      <ion-row class="border-bottom ion-align-items-center" (click)="goToDetail(pokemon)">
+        <ion-col size="4">
+          <ion-img [src]="pokemon.sprite" [alt]="pokemon.name"></ion-img>
+        </ion-col>
+        <ion-col size="3">
+          <ion-text>{{ pokemon.name }}</ion-text>
+        </ion-col>
+        <ion-col size="5" class="pokemon-types">
+          <ion-img
+            class="type-badge"
+            [src]="'assets/img/' + pokemon.type1 + '.gif'"
+            [alt]="pokemon.type1"
+          ></ion-img>
+          @if (pokemon.type2) {
+            <ion-img
+              class="type-badge"
+              [src]="'assets/img/' + pokemon.type2 + '.gif'"
+              [alt]="pokemon.type2"
+            ></ion-img>
+          }
+        </ion-col>
+      </ion-row>
+    }
+  </ion-grid>
+
+  <ion-infinite-scroll (ionInfinite)="morePokemon($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Cargando más Pokémons...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>
